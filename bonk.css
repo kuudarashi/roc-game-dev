@@ -1,0 +1,33 @@
+/* make a body class */
+body {
+    background:url(./catBG.jpg) ;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    background-color: crimson;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+    background: url(./GalaxyBG.jpg);
+    background-size: cover;
+    border: 3px solid violet;    
+    border-radius: 25px;
+}
+
+/* create a class called board div, with the width and height set to 180 and the background size to cover */
+#board div {
+    /* size is that it will fit in a 3 by 3 grid */
+    width: 180px;
+    height: 180px;
+    background-image: url(./rift.jpg);
+    background-size: cover;
+    
+
+}
