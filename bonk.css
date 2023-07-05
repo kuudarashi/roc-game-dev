@@ -1,6 +1,6 @@
 /* make a body class */
 body {
-    background:url(./catBG.jpg) ;
+    background:url(./resources/catBG.jpg) ;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
   background-size: cover;
@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     
-    background: url(./GalaxyBG.jpg);
+    background: url(./resources/GalaxyBG.jpg);
     background-size: cover;
     border: 3px solid violet;    
     border-radius: 25px;
@@ -23,11 +23,21 @@ body {
 
 /* create a class called board div, with the width and height set to 180 and the background size to cover */
 #board div {
-    /* size is that it will fit in a 3 by 3 grid */
+    /* size is that so it will fit in a 3 by 3 grid */
     width: 180px;
     height: 180px;
-    background-image: url(./rift.jpg);
+    background-image: url(./resources/rift.png);
     background-size: cover;
     
 
 }
+
+#board div image {
+    /* all img tags inside the tile die tags */
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
