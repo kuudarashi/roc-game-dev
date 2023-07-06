@@ -213,6 +213,7 @@ function selectTile() {
     if(this == CurrSusTile) {
         score += 100;
         document.getElementById("score").innerText = score.toString();//updates score
+        setSus();
     }
 
     else if (this == CurrMaxwellTile) {

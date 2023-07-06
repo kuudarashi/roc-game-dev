@@ -103,3 +103,7 @@ body {
     border: 2px solid white;
     margin: 1rem;
 }
+#wm {
+    width: 30px;
+    height: 30px;
+}
