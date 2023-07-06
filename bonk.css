@@ -19,6 +19,7 @@ body {
     background-size: cover;
     border: 3px solid violet;    
     border-radius: 25px;
+    position: relative;
 }
 
 /* create a class called board div, with the width and height set to 180 and the background size to cover */
@@ -32,12 +33,73 @@ body {
 
 }
 
-#board div image {
+#board div img {
     /* all img tags inside the tile die tags */
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
+    /* cover image */
+    object-fit: cover;
+    /* center image */
+    margin: 0 auto;
+
+    /* disable select */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
 }
 
+.hidden {
+    display: none !important;
+}
 
+#pause-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#pause-screen h1 {
+    color: white;
+    font-size: 5rem;
+    margin: 0;
+}
+
+.game-over {
+    background-image: none !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 25px;
+}
+
+.game-over h1 {
+    color: white;
+    font-size: 5rem;
+    margin: 0;
+}
+
+#start {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 25px;
+    border: 2px solid white;
+    margin: 1rem;
+}
