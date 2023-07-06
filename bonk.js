@@ -62,7 +62,11 @@ const Timer = function() {
 
 }
 
-// sets up the game
+/**
+ * @ Sets up the game
+ * @ Creates the game board
+ * @ Adds event listener to the restart button
+ */
 function setGame() {
     // set up grid for the game board in html
     for (var i = 0; i < 9; i++) { //i goes from 0 to 8, stop at 9
@@ -86,19 +90,26 @@ window.onload = function() {
     document.getElementById("start").addEventListener("click", startGame); //add event listener to the start button
 }
 
+/**
+ * @ Starts the game
+ * @ Toggles the hidden class for the game board, score board, and start button
+ * @ Sets up the game
+ * @ Sets up the timer
+ * @ Starts the timer
+ * @ Adds event listener to the escape key
+ */
 function startGame() {
+    // get the game board, score board, and start button
     const gameBoard = document.getElementById("board");
     const scoreBoard = document.getElementById("score");
+    const startButton = document.getElementById("start");
 
-
+    // toggle the hidden class for the game board, score board, and start button
     gameBoard.classList.remove("hidden");
     scoreBoard.classList.remove("hidden");
-
-    const startButton = document.getElementById("start");
     startButton.classList.add("hidden");
 
     setGame(); //set up the game
-
 
     // add event listener to the escape key
     document.addEventListener("keydown", function(e){
@@ -112,11 +123,22 @@ function startGame() {
     timer.start(); //start the timer
 }
 
+/**
+ * @ Ends the game
+ */
 function GameOver() {
     gameOver = true;
     const gameOverScreen = document.querySelector(".game-over");
     gameOverScreen.classList.remove("hidden");
 }
+
+/**
+ * @ Restarts the game
+ * @ Resets the score and hides the game over screen
+ * @ Clears the timer
+ * @ Sets up the game
+ * @ Runs the game
+ */
 function Restart() {
     gameOver = false;
     score = 0;
@@ -134,7 +156,9 @@ function getRandomTile() {
 }
 
 
-//sets the sus
+/**
+ * sets the sus
+ */
 function setSus() {
     if (CurrSusTile) { //if there is a sus tile, remove it
         CurrSusTile.innerHTML = "";
@@ -151,7 +175,9 @@ function setSus() {
     CurrSusTile.appendChild(sus);
 
 }
-
+/**
+ * sets the maxwell
+ */
 function setMaxwell() {
     if (CurrMaxwellTile) { //if there is a maxwell tile, remove it
             CurrMaxwellTile.innerHTML = "";
@@ -173,6 +199,11 @@ function setMaxwell() {
     }
 }
 
+/**
+ * checks if the tile is the sus or maxwell
+ * @ Updates the score
+ * @ Ends the game if the tile is maxwell
+*/
 function selectTile() {
 
     if (gameOver) {
