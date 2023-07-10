@@ -209,15 +209,14 @@ function selectTile() {
     if (gameOver) {
         return;
     }
-
+    //when the sus is clicked adds 100 to the current score
     if(this == CurrSusTile) {
         score += 100;
         document.getElementById("score").innerText = score.toString();//updates score
         setSus();
     }
-
+    //when maxwell is clicked shows the current score and tell you that you lost
     else if (this == CurrMaxwellTile) {
-       // score -= 1000000;
         document.getElementById("score").innerText =  "NOOOOO MAXWELLL score:" + score.toString();//ends the game
         GameOver();
     }
